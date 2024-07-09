@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badminton Court Management Visualization Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>羽球零打經營試算機</h1>
+        <div class="content">
+            <div class="parameters">
+                <h2>參數輸入區</h2>
+                <div class="parameter">
+                    <label for="courtPrice">單面球場價格:</label>
+                    <input type="number" id="courtPrice" value="400" oninput="calculate()">
+                    <button class="adjust-button" onclick="adjustValue('courtPrice', 50)">+</button>
+                    <button class="adjust-button" onclick="adjustValue('courtPrice', -50)">-</button>
+                </div>
+                <div class="parameter">
+                    <label for="courtCount">租用球場數量:</label>
+                    <input type="number" id="courtCount" value="4" oninput="calculate()">
+                    <button class="adjust-button" onclick="adjustValue('courtCount', 1)">+</button>
+                    <button class="adjust-button" onclick="adjustValue('courtCount', -1)">-</button>
+                </div>
+                <div class="parameter">
+                    <label for="courtHours">租用小時數:</label>
+                    <input type="number" id="courtHours" value="3" oninput="calculate()">
+                    <button class="adjust-button" onclick="adjustValue('courtHours', 1)">+</button>
+                    <button class="adjust-button" onclick="adjustValue('courtHours', -1)">-</button>
+                </div>
+                <div class="parameter">
+                    <label for="sessionPrice">單人單次價格:</label>
+                    <input type="number" id="sessionPrice" value="250" oninput="calculate()">
+                    <button class="adjust-button" onclick="adjustValue('sessionPrice', 50)">+</button>
+                    <button class="adjust-button" onclick="adjustValue('sessionPrice', -50)">-</button>
+                </div>
+                <div class="parameter">
+                    <label for="participants">單次招收人數:</label>
+                    <input type="number" id="participants" value="32" oninput="calculate()">
+                    <button class="adjust-button" onclick="adjustValue('participants', 4)">+</button>
+                    <button class="adjust-button" onclick="adjustValue('participants', -4)">-</button>
+                </div>
+                <div class="parameter">
+                    <label for="shuttlecockPrice">單顆羽毛球價:</label>
+                    <input type="number" id="shuttlecockPrice" value="40" oninput="calculate()">
+                    <button class="adjust-button" onclick="adjustValue('shuttlecockPrice', 5)">+</button>
+                    <button class="adjust-button" onclick="adjustValue('shuttlecockPrice', -5)">-</button>
+                </div>
+                <div class="parameter">
+                    <label for="shuttlecockCount">使用羽毛球數量:</label>
+                    <input type="number" id="shuttlecockCount" value="30" oninput="calculate()">
+                    <button class="adjust-button" onclick="adjustValue('shuttlecockCount', 5)">+</button>
+                    <button class="adjust-button" onclick="adjustValue('shuttlecockCount', -5)">-</button>
+                </div>
+            </div>
+            <div class="results">
+                <h2>結果顯示區</h2>
+                <div class="result-item">
+                    <span class="label">總球場費用:</span>
+                    <span class="value" id="totalCourtFee"></span>
+                </div>
+                <div class="result-item">
+                    <span class="label">總球費用:</span>
+                    <span class="value" id="totalShuttlecockFee"></span>
+                </div>
+                <div class="result-item">
+                    <span class="label">總支出:</span>
+                    <span class="value" id="totalExpenses"></span>
+                </div>
+                <div class="result-item">
+                    <span class="label">總收入:</span>
+                    <span class="value" id="totalRevenue"></span>
+                </div>
+                <div class="result-item">
+                    <span class="label">營利:</span>
+                    <span class="value" id="profit"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright 2024 Yuan</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
